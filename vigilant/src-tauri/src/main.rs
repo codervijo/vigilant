@@ -118,7 +118,7 @@ struct Args {
     exec: bool,
 
     /// The command to run
-    #[arg(default_value = "/usr/bin/lsfd")]
+    #[arg(default_value = "/usr/bin/lsattr")]
     command: String,
 }
 

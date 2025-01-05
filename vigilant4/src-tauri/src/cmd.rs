@@ -89,7 +89,7 @@ impl CmdOutput {
                 // Capture the standard output as a string and split it into lines
                 let output_lines = String::from_utf8_lossy(&output.stdout)
                     .lines()
-                    .map(|line| line.to_string())
+                    .map(|line| line)
                     .collect::<Vec<String>>();
 
                 // Create and return the CmdOutput struct

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const TitleBanner = ({ leftTitle, centerTitle, rightTitle }: { leftTitle: string, centerTitle: string, rightTitle: string }) => {
+const TitleBanner = ({ leftTitle, centerTitle, rightTitle }) => {
   return (
     <div style={{
       display: 'flex',
@@ -34,4 +34,3 @@ const TitleBanner = ({ leftTitle, centerTitle, rightTitle }: { leftTitle: string
 };
 
 export default TitleBanner;
-

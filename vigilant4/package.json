@@ -14,14 +14,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "PORT=4000 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "react-scripts start",
-    "tauri": "tauri",
-    "tauri:dev": "tauri dev",
-    "tauri:build": "tauri build"
+    "start": "PORT=4000 pnpm react-scripts start",
+    "build": "pnpm react-scripts build",
+    "test": "pnpm react-scripts test",
+    "eject": "pnpm react-scripts eject",
+    "dev": "pnpm react-scripts start",
+    "tauri": "pnpm tauri",
+    "tauri:dev": "pnpm tauri dev",
+    "tauri:build": "pnpm tauri build"
   },
   "eslintConfig": {
     "extends": [

@@ -90,10 +90,7 @@ endif
 /usr/local/bin/pnpm:
 	npm install -g pnpm
 
-/usr/local/bin/pm2:
-	npm install -g pm2
-
-build: /usr/local/bin/pm2
+build: 
 	(cd $(TAURI_APP_NAME)/src-tauri && cargo build)
 ifeq ($(IS_DOCKER),no)
 	$(error "NOT in docker container")
@@ -134,9 +131,6 @@ endif
 
 package:
 	(cd $(TAURI_APP_NAME) && pnpm tauri build)
-.PHONY: stop
-stop:
-	pm2 stop $(PROCESS_NAME) && pm2 delete $(PROCESS_NAME)
 
 .PHONY:clean
 clean: stop

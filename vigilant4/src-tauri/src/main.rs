@@ -128,6 +128,7 @@ struct Args {
     #[arg(required = true)]
     command: String,
 }
+//hello
 
 #[tokio::main]
 async fn main() {
@@ -165,8 +166,11 @@ async fn send_json_message(
     rdata: SetDataRow,
 ) -> Result<(), Error> {
     let json_message = serde_json::to_string(&rdata).unwrap();
+
     writer.send(Message::Text(json_message.clone())).await?;
+
     println!("Sent message {}", json_message);
+
     Ok(())
 }
 
@@ -214,7 +218,7 @@ async fn start_websocket_server(gconf: Arc<Mutex<GConf>>) {
         // Create a SetHeaders struct
         let hdr_message = SetHeaders {
             command: "SetHeaders".to_string(),
-            headers: vec!["RustName".to_string(), "RustAge".to_string(), "RustCountry".to_string()],
+            headers: vec!["Name".to_string(), "Age".to_string(), "Country".to_string()],
         };
 
         // Serialize the struct to a JSON string
@@ -233,7 +237,7 @@ async fn start_websocket_server(gconf: Arc<Mutex<GConf>>) {
                 command: "SetDataRow".to_string(),
                 index: idx,
                 value: "Rusty Rust".to_string(),
-                name: line.to_string(),
+                name: line,
                 country: "USA".to_string(),
                 age: 40,
             };
